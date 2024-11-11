@@ -2,13 +2,13 @@
 import { fetch,fetchAll } from "../../utils/db.js";
 
 
-const REGISTERS = ` insert into users(lastname,username,gmail,phone_nomer,password) values ($1,$2,$3,$4, crypt($5, gen_salt('bf'))) returning * `
+const REGISTERS = ` insert into users(lastname,surname,gmail,phone_nomer,password) values ($1,$2,$3,$4, crypt($5, gen_salt('bf'))) returning * `
 
 
 
-const REGISTER = async ({lastname,username,gmail,phone_nomer,password}) => {
+const REGISTER = async ({lastname,surname,gmail,phone_nomer,password}) => {
     try {
-        return await fetchAll(REGISTERS,[lastname,username,gmail,phone_nomer,password])
+        return await fetchAll(REGISTERS,[lastname,surname,gmail,phone_nomer,password])
     } catch (error) {
         console.log('error_register', error.message);
     }

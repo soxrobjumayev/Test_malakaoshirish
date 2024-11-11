@@ -8,26 +8,15 @@ create database learning_practice;
 create table users(
     user_id serial primary key,
     lastname varchar(30) not null,
-    username varchar(30)not null ,
+    surname varchar(30)not null ,
     gmail varchar(30)not null ,
     phone_nomer varchar(30)not null unique,
     password varchar(60)not null 
 );
 
-insert into users(lastname,username,phone_nomer,password) values ('jumayev','suxrob','+998946922939','12345678');
+insert into users(lastname,surname,gmail,phone_nomer,password) values ('jumayev','suxrob','soxrobjumayev@gmail.com','+998946922939','12345678');
 
 
-create table Test_table (
-    Test_table_id serial primary key,
-    questions varchar ,
-);
-
-create table Test_table_answers (
-    Test_table_id serial primary key,
-    answers varchar ,
-    status boolean,
-    Test_table_id int references Test_table(Test_table_id)
-);
 
 
 
@@ -36,7 +25,6 @@ create table Table_Chapter (
     Table_Chapter_id serial primary key,
     Table_Chapter_number varchar ,
     Table_Chapter_topic varchar 
-    
 );
 
  /*razdel 0*/
@@ -58,10 +46,26 @@ create table Table_subject(
     -- Table_Page_photo text,
 
 
+-- ===================savol tabol
+
+create table Questions(
+    Question_id serial primary key,
+    user_id int references users(user_id),
+    Table_Section_id int references Table_Section(Table_Section_id),
+);
+
+create table Test(
+    Test_id serial primary key,
+    user_id int references users(user_id),
+    Question_id int references Questions(Question_id),
+    option_1 null
+  
+);
+
 
 -- glava 0
 insert into Table_Chapter(Table_Chapter_number,Table_Chapter_topic) values
-('yangi','test  с курсом'); 
+('Добро пожаловать на курс ','test  с курсом'); 
 
         insert into Table_Section(Table_Section_number,Table_Section_topic,Table_Chapter_id) values
 ('Раздел 0.0','Добро пожаловать на курс  

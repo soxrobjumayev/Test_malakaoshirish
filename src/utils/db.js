@@ -3,8 +3,8 @@ import pg from 'pg'
 
 
 const pool = new pg.Pool({
-    connectionString: "postgres://einlbzzm:ZTIcmg6hfli364deGVbCph33lvkvStUx@arjuna.db.elephantsql.com/einlbzzm",
-    // user: 'einlbzzm',
+    connectionString: "postgres://einlbzzm:gO96YUnGAcxrD8v5ZiYNhjHHGALfyB5x@arjuna.db.elephantsql.com/einlbzzm",
+    // user: 'psotgres',
     // host: 'localhost',
     // database: 'learning_practice',
     // password: '1234'

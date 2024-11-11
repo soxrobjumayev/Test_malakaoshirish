@@ -13,9 +13,9 @@ import jwt from '../../utils/jwt.js'
             })
 
         }else{
-            res.status(403).json({
-                status:403,
-                message:'xato admin',
+            res.status(400).json({
+                status:400,
+                message: error.message ,
                 data: user,
             })
         }
@@ -27,6 +27,7 @@ import jwt from '../../utils/jwt.js'
  const LOGIN =async (req,res) =>{
     try {
         const user = await model.LOGIN(req.body)
+        console.log(re.body);
         if(user){
             res.status(200).json({
                 status:200,

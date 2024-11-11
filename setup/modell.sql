@@ -5,6 +5,8 @@ create database learning_practice;
 
 
 
+drop table users cascade;
+
 create table users(
     user_id serial primary key,
     lastname varchar(30) not null,
@@ -27,6 +29,9 @@ create table Table_Chapter (
     Table_Chapter_topic varchar 
 );
 
+insert into Table_Chapter(Table_Chapter_number,Table_Chapter_topic) values
+('Добро пожаловать на курс ','test  с курсом'); 
+
  /*razdel 0*/
 create table Table_Section(
     Table_Section_id serial primary key,
@@ -34,6 +39,9 @@ create table Table_Section(
     Table_Section_topic varchar ,
     Table_Chapter_id int references Table_Chapter(Table_Chapter_id)
 );
+  insert into Table_Section(Table_Section_number,Table_Section_topic,Table_Chapter_id) values
+('Раздел 0.0','Добро пожаловать на курс  
+Cybersecurity Essentials',1);
 
  /*tema 0*/
 create table Table_subject(
@@ -43,24 +51,63 @@ create table Table_subject(
     Table_subject_topic_body varchar ,
     Table_Section_id int references Table_Section(Table_Section_id)
 );
+
+
+ insert into Table_subject(Table_subject_number,Table_subject_topic,Table_subject_topic_body,Table_Section_id) values
+('Тема 0.0.1','Информация для учащихся',
+
+'Положение дел в сфере кибербезопасности 
+Сегодня риски и угрозы кибербезопасности существуют повсюду. Сетевые инфраструктуры и Интернет все более уязвимы для физических и кибератак, число которых постоянно растет. Киберпреступники и правительства используют эти уязвимости для кражи информации и денег.
+Безопасность сетевой инфраструктуры особенно трудно обеспечить в силу целого ряда причин.
+•	Сложность и интеграция сетевых инфраструктур постоянно повышаются.
+•	К сетевым инфраструктурам подключены физические устройства.
+•	Киберпреступники могут получить доступ к сетям из любой точки мира.
+Сегодня на рынке труда существует нехватка сотрудников, прошедших подготовку в области кибербезопасности. Вот лишь некоторые из перспективных специальностей:
+•	специалист по кибербезопасности;
+•	специалист по проведению технической экспертизы;
+•	эксперт по информационной безопасности;
+•	«белый» хакер.
+Все эти специальности пользуются большим спросом на рынке труда и могут стать прекрасным карьерным выбором в увлекательной, постоянно меняющейся сфере кибербезопасности. По завершении курса Cybersecurity Essentials вы сможете продолжить свое образование и пройти углубленные курсы по безопасности.      ADD
+
+Больше чем просто информация 
+Учебная среда netacad.com является важной частью общего взаимодействия с курсом для студентов и инструкторов Сетевой академии. Материалы интернет-курса охватывают учебник и интерактивные упражнения, письменные лабораторные работы, а также большое число контрольных работ. Все эти материалы предполагают обратную связь, что позволит вам оценить свой прогресс в процессе обучения.
+Обучение проводится с использованием широкого спектра технологий, включая текстовые, графические, голосовые и видеотехнологии, а также насыщенных интерактивных заданий. Это помогает сделать работу, игры, обучение и жизнь в целом гораздо увлекательнее.
+В разных странах сетевые технологии и Интернет влияют на людей по-разному. Несмотря на то, что при создании этих учебных материалов мы сотрудничали с инструкторами из разных стран, в ходе работы вам необходимо совместно с инструкторами и другими учащимися адаптировать материал этого курса к особенностям вашего региона.
+
+Методика преподавания  
+Философия E-doing построена по следующему принципу: практическая отработка навыков — залог эффективного обучения. Учебный план включает в себя интерактивные упражнения, целью которых является стимуляция интереса, повышение усвояемости знаний и обогащение учебного процесса в целом. Такой подход значительно облегчает понимание материалов
+Общие сведения о курсе.
+'
+,1);
     -- Table_Page_photo text,
 
 
 -- ===================savol tabol
 
+drop table Questions cascade;
+
 create table Questions(
     Question_id serial primary key,
-    user_id int references users(user_id),
-    Table_Section_id int references Table_Section(Table_Section_id),
+    Questions varchar,
+    Table_Section_id int references Table_Section(Table_Section_id)
+    
 );
 
+insert into Questions(Questions,Table_Section_id) values
+('5+5',1); 
+
+
+
+drop table Test cascade;
 create table Test(
     Test_id serial primary key,
     user_id int references users(user_id),
     Question_id int references Questions(Question_id),
-    option_1 null
-  
+    option_s  VARCHAR(150) null
 );
+
+insert into Test(user_id,Question_id,option_s) values
+(2,1,null); 
 
 
 -- glava 0

@@ -6,11 +6,14 @@ import jwt from '../../utils/jwt.js'
     try {
         const user = await model.REGISTER(req.body)
         if(user){
+            delete user[0].password;
             res.status(200).json({
                 status:200,
                 message:'ok',
-                data: user,
+                data:user
+                
             })
+
 
         }else{
             res.status(400).json({
@@ -27,8 +30,10 @@ import jwt from '../../utils/jwt.js'
  const LOGIN =async (req,res) =>{
     try {
         const user = await model.LOGIN(req.body)
-        console.log(re.body);
+        console.log(user);
         if(user){
+
+            user.password = null;
             res.status(200).json({
                 status:200,
                 message:'ok',

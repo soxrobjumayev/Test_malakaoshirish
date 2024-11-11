@@ -4,7 +4,9 @@
 import glava from './/glava/router.js'
 import rasdel from './/rasdel/router.js'
 import tema from './/tema/router.js'
-import uesrs from './/users/router.js'
+import users from './/users/router.js'
+import savol from './/savol/router.js'
+
 
 
 
@@ -17,6 +19,6 @@ import uesrs from './/users/router.js'
 
 
 export default [
-    glava,rasdel,tema,uesrs
+    glava,rasdel,tema,users,savol
 ]
 

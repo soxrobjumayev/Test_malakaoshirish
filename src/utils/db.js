@@ -3,8 +3,8 @@ import pg from 'pg'
 
 
 const pool = new pg.Pool({
-    connectionString: "postgres://einlbzzm:gO96YUnGAcxrD8v5ZiYNhjHHGALfyB5x@arjuna.db.elephantsql.com/einlbzzm",
-    // user: 'psotgres',
+    connectionString: "postgres://einlbzzm:M_4k6phURuv_HEgN5dzvLeVrj2RMHAgH@arjuna.db.elephantsql.com/einlbzzm",
+    // user: 'einlbzzm',
     // host: 'localhost',
     // database: 'learning_practice',
     // password: '1234'
@@ -24,7 +24,7 @@ async function fetchAll(SQL, params = []) {
         client.release()
     }
 
-
+s
 }
 
 

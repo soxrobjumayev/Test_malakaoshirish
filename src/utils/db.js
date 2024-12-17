@@ -24,7 +24,6 @@ async function fetchAll(SQL, params = []) {
         client.release()
     }
 
-s
 }
 
 

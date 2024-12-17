@@ -11,9 +11,12 @@ export default (req,res,next) =>{
 
         let { userId } = jwt.verify(token)
         req.userId = userId
-
         return next()
-    } catch (error) {
-        return next(new Error( 'xato token'))
     }
-  }
+    catch (error) {
+        return next({
+            status: 403,
+            message: error.message,
+            data: error, 
+        });
+    }}

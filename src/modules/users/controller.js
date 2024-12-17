@@ -42,8 +42,8 @@ import jwt from '../../utils/jwt.js'
             })
 
         }else{
-            res.status(403).json({
-                status:403,
+            res.status(401).json({
+                status:4031,
                 message:'wrong username or password',
                 data: user,
             })

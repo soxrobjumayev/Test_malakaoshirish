@@ -16,8 +16,4 @@ export default {
 }  
 
 
-const   quesion = `select * from Questions as QS join Table_Chapter as TS on QS.Table_Chapter_id = TS.Table_Chapter_id where TS.Table_Chapter_id = $1;`
-
-
-// select * from Questions as ts join Table_Section as sub on ts.table_section _id= sub.table_section_id where sub.table_section_id =1;
-
+const   quesion = `select * from results_ball where table_chapter_id = $1;`

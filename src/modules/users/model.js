@@ -14,6 +14,7 @@ const REGISTER = async ({lastname,surname,gmail,phone_nomer,password}) => {
     }
 }
 
+
 const LOGIN = async ({ gmail, password }) => {
     try {
         console.log({gmail, password});
@@ -31,6 +32,8 @@ const LOGIN = async ({ gmail, password }) => {
         console.log(error.message);
     }
 }
+
+
 
 
 // const GETT = async ({username}) => {
